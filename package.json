@@ -2,13 +2,12 @@
   "name": "conversor-btc",
   "version": "1.0.0",
   "description": "Conversor de bitcoin.",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
     "clear": "rimraf lib",
     "build": "npm run clear && babel.cmd --out-dir bin src",
     "build:watch": "npm run build -- --watch",
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepush": "npm run lint",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --reporter nyan",
     "test:tdd": "npm run test -- --watch",
     "test:coverage": "nyc npm test"
@@ -51,8 +50,14 @@
     "eslint-plugin-import": "^2.6.1",
     "husky": "^0.11.9",
     "mocha": "^3.2.0",
+    "nock": "^9.1.6",
     "nyc": "^10.2.0",
     "rimraf": "^2.6.1",
-    "commander": "^2.14.1"
+    "sinon": "^4.3.0",
+    "sinon-chai": "^2.14.0"
+  },
+  "dependencies": {
+    "commander": "^2.14.1",
+    "request": "^2.83.0"
   }
 }
