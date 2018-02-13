@@ -1,0 +1,57 @@
+{
+  "name": "conversor-btc",
+  "version": "1.0.0",
+  "description": "Conversor de bitcoin.",
+  "main": "index.js",
+  "scripts": {
+    "clear": "rimraf lib",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir bin src",
+    "build:watch": "npm run build -- --watch",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --reporter nyan",
+    "test:tdd": "npm run test -- --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "prefereGlobal": "true",
+  "bin": {
+    "conversor-btc": "bin/main.js"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivansantos1189/cli-conversor-btc.git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "Ivan Cunha <ivan_santos1189@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivansantos1189/cli-conversor-btc/issues"
+  },
+  "homepage": "https://github.com/ivansantos1189/cli-conversor-btc#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.3.2",
+    "babel-register": "^6.24.0",
+    "chai": "^3.5.0",
+    "eslint": "^4.0.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.6.1",
+    "husky": "^0.11.9",
+    "mocha": "^3.2.0",
+    "nyc": "^10.2.0",
+    "rimraf": "^2.6.1"
+  }
+}
