@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clear": "rimraf lib",
-    "build": "npm run clear && ./node_modules/.bin/babel --out-dir bin src",
+    "build": "npm run clear && babel.cmd --out-dir bin src",
     "build:watch": "npm run build -- --watch",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
@@ -52,6 +52,7 @@
     "husky": "^0.11.9",
     "mocha": "^3.2.0",
     "nyc": "^10.2.0",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "commander": "^2.14.1"
   }
 }
