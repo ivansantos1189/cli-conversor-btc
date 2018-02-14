@@ -4,6 +4,7 @@
   "description": "Conversor de bitcoin.",
   "main": "bin/index.js",
   "scripts": {
+    "converte": "node src/main.js", 
     "clear": "rimraf lib",
     "build": "npm run clear && babel.cmd --out-dir bin src",
     "build:watch": "npm run build -- --watch",
